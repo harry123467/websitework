@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<style>
+    * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+        text-decoration: none;
+    }
+    .shape-elispa{
+        position: absolute;
+        right: 0;
+        bottom: 50%;
+    }
+    .btn{
+        padding: 17px;
+        background-color: #42B7C1;
+        border-radius: 7px;
+    }
+
+    .active {
+        transition: 0.4s;
+        width: 100%;
+        background-color: #2E2E2E;
+        transition: 0.7s;
+        padding: 30px 5%;
+        z-index: 1000;
+
+
+    }
+
+    .wrapprr {
+        max-width: 1504px;
+        margin: 0 auto;
+    }
+
+    header {
+        background-image: url(imges/Vector\ 10.png);
+        width: 100%;
+        height: 100vh;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat
+    }
+
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 30px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        padding: 30px 8%;
+        z-index: 100;
+
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    nav ul {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        list-style: none;
+    }
+
+    nav ul li a {
+        color: #ffff;
+    }
+
+
+
+    button {
+        padding: 22.5px;
+        border: none;
+        width: 16%;
+        position: absolute;
+        right: 0px;
+        border-bottom-right-radius: 4px;
+        border-top-right-radius: 4px;
+        color: #FFF;
+        background-color: aqua;
+
+    }
+
+    form {
+        text-align: center;
+        position: relative;
+    }
+
+    input {
+        border: none;
+        outline: 0;
+        border-bottom-left-radius: 6px;
+        border-top-left-radius: 6px;
+        width: 100%;
+        padding: 22px;
+        border-bottom-right-radius: 4px;
+        border-top-right-radius: 4px;
+
+
+    }
+
+    .the {
+
+        /* padding-top: 15%; */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .the h1 {
+        color: #FFF;
+        font-size: 45px;
+        font-style: normal;
+        font-weight: 800;
+        line-height: 128%;
+        margin: 20px;
+        text-align: center;
+
+
+    }
+
+    form p {
+        color: #FFF;
+        text-align: center;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 26px;
+        margin: 25px;
+    }
+
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+  /* end navbar section */
+
+  /* responsive code */
+
+    @media (max-width: 1100px) {
+        input {
+            width: 100%;
+            height: auto;
+        }
+
+        button {
+            overflow: hidden;
+        }
+
+        form {
+            padding: 10px 10px;
+        }
+
+        form p {
+            text-align: center;
+        }
+
+        nav {
+            padding: 30px 100px;
+            width: 100%;
+            left: 0;
+            right: 0;
+        }
+
+
+
+        .logo img {
+            width: 90px;
+        }
+
+        .the h1 {
+            font-size: 30px;
+        }
+
+        input {
+            width: 100%;
+        }
+
+
+    }
+
+    @media (max-width: 991px) {
+        html {
+            font-size: 55%;
+        }
+
+        #flex-change img {
+            width: 80px;
+            height: 130px;
+        }
+    }
+
+    @media (max-width: 450px) {
+        html {
+            font-size: 50%;
+
+        }
+
+
+
+    }
+
+    @media (max-width: 990px) {
+        .recatngle-img-cc img {
+            width: 100%;
+        }
+        .rectangle-cirle img{
+            width: 60px;
+        }
+        
+
+    }
+
+    @media (max-width: 800px) {
+        nav ul li {
+            display: none;
+        }
+
+    }
+  /* end responsive code */
+
+
+
+
+
+   
+   /* retangle imges section */
+    .content {
+        text-align: center;
+    }
+  
+    .content h1 {
+        color: #2E2E2E;
+        text-align: center;
+        font-size: 45px;
+        font-weight: 800;
+        line-height: 128%;
+    }
+
+    .content p {
+        color: #949494;
+        text-align: center;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 26px;
+        margin: 20px;
+    }
+    .recatngle-imges {
+        border-radius: 15px 15px 0px 0px;
+        background: linear-gradient(104deg, #4FDCE9 6.36%, #42B7C1 98.14%);
+        padding: 40px 40px;
+        text-align: center;
+        position: relative;
+        z-index: 100;
+    }
+    .recatngle-imges::before{
+        content: url(imges/Ellipse\ 9.png);
+        position: absolute;
+        right: 5%;
+        top: 6%;
+        z-index: -1; 
+    }
+    .recatngle-imges::after{
+        content: url(imges/Rectangle\ 33.png);
+        position: absolute;
+        right: 9%;    
+        bottom:  9%;
+        z-index: -1;      
+    }
+    .overlay-container #flex-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+        gap: 1.9rem;
+        padding-top: 7rem;
+        text-align: center;
+    }
+    .heading-bar h2 {
+        color: #2E2E2E;
+        text-align: center;
+        font-size: 24px;
+        font-weight: 800;
+        line-height: 128%;
+    }
+    .heading-bar p {
+        color: #949494;
+        text-align: center;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 26px;
+        margin: 20px;
+    }
+    .recatngle-png-convert {
+        border-radius: 20px;
+        border-radius: 15px;
+        border: 1px solid #F5F5F5;
+        background: #FFF;
+        box-shadow: 0px 6px 12px 0px rgba(0, 0, 0, 0.08);
+        transition: 0.4s;
+    }
+
+    .recatngle-png-convert:hover {
+        transform: scale(1.1);
+    }
+    .flex-divh {
+        position: absolute;
+        margin-top: 40px;
+    }
+    .flex-divh img {
+        background-image: url(imges/image\ 3.png);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 200px;
+        border-radius: 15px;
+    }
+    .heading-bar {
+        padding-top: 7rem;
+    }
+    .cards-vector-img {
+        position: absolute;
+        margin-left: 8rem;
+        border-radius: 100%;
+        background-color: #ffff;
+    }
+    .cards-vector {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .rectangle-cirle{
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        z-index: -1;
+    }
+   /* end  retangle imges section */
+  
+</style>
+
+<body>
+    <header>
+        <div class="shape-vector" >
+            <div class="shpe-left">
+                <img src="imges/Ellipse 108.png" alt="" style="position: absolute; left: 0;" width="260px">
+
+            </div>
+            <img src="imges/Ellipse 108.png" alt="">
+
+            <div class="shape-elispa">
+                <div class="shape-right">
+                    <img src="imges/Ellipse 107.png" alt="" width="220px" style="position: absolute; right: 0;">
+    
+                </div>
+    
+                <img src="imges/Ellipse 107.png" alt="" width="250px">
+
+            </div>
+            
+        </div>
+
+     
+     
+        <div class="wrapprr">
+            <nav>
+                <div class="logo"><img src="imges/logo (1) 3.svg" alt=""></div>
+
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">About Us</a></li>
+                    <li><a href="">service</a></li>
+                    <li><a href="">Bloges</a></li>
+                    <li><a href="">Help</a></li>
+                    <li><a href="" class="btn">Contact Us</a></li>
+
+                </ul>
+              
+            </nav>
+
+            <a href="">
+                <div class="the">
+            </a>
+
+
+            <form>
+                <h1 class="date">
+                    Guide, Video & Support</h1>
+
+
+                <input type="search" name="" id="name" required placeholder="Enter Emil Adderss">
+                <button class="get">SEARCH </button>
+                <p>Most practitioners search fo r: Task templates, Mobile App, eSign Requests, Transcript Errors</p>
+
+            </form>
+
+        </div>
+
+
+        </div>
+    </header>
+    </div>
+
+    <!-- section next  -->
+
+
+
+    <section class="overlay-container">
+
+        <div class="content">
+            <h1 id="more-ger"> More Magical Tools For You</h1>
+            <p>We have build user-centric product that are easy to use yet super functional</p>
+
+        </div>
+        <div class="wrapprr" id="flex-container">
+
+
+
+
+            <div class="recatngle-png-convert">
+
+                <div class="recatngle-imges" id="circle-circle-233jj-66">
+
+                    <div class="recatngle-img-cc">
+                        <div class="rectangle-cirle">
+                            <img src="imges/circle 2.png" alt="">
+                        </div>
+                        <div class="rectangle-cirle">
+                            <img src="imges/circle 2.png" alt="">
+                        </div>
+
+                        <div class="flex-divh" id="flex-change">
+                            <img src="imges/i-phone.png" alt="">
+
+                        </div>
+                        
+
+                        <img src="imges/image 3.png" alt="">
+                      
+                   
+
+                        <div class="cards-vector-img">
+                            
+                            <img src="imges/vector-1.png" alt="">
+                        </div>
+                       
+                    </div>
+                    
+                </div>
+
+
+                <div class="heading-bar" id="h2-999-size" style="position: relative;">
+
+
+                    <h2>Getting Started In Acounta</h2>
+
+
+
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                        the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
+                        of type </p>
+
+
+
+                </div>
+
+
+            </div>
+
+
+            <div class="recatngle-png-convert">
+                <div class="recatngle-imges">
+                    <div class="recatngle-img-cc">
+                        <div class="rectangle-cirle">
+                            <img src="imges/circle 2.png" alt="">
+                        </div>
+                        <img src="imges/image 3.png" alt="">
+                        
+                        <div class="cards-vector-img">
+                            <img src="imges/vector-1.png" alt="">
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="heading-bar" id="h2-999-size">
+
+                    <h2>Getting Started In Acounta</h2>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                        the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
+                        of type </p>
+                </div>
+
+            </div>
+            <div class="recatngle-png-convert">
+                <div class="recatngle-imges" id="Rectangle-right">
+                    <div class="recatngle-img-cc">
+                        <div class="rectangle-cirle">
+                            <img src="imges/circle 2.png" alt="">
+                        </div>
+
+                        <div class="flex-divh" id="flex-change">
+                            <img src="imges/i-phone.png" alt="" id="flex-change">
+                        </div>
+                        <img src="imges/image 3.png" alt="">
+                        <div class="cards-vector-img">
+                            <img src="imges/vector-1.png" alt="">
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="heading-bar" id="h2-999-size">
+                    <h2>User & Firm Administration</h2>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                        the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
+                        of type </p>
+                </div>
+
+            </div>
+
+
+          
+
+
+            <div class="recatngle-png-convert">
+                <div class="recatngle-imges">
+                    <div class="recatngle-img-cc">
+                        <div class="rectangle-cirle">
+                            <img src="imges/circle 2.png" alt="">
+                        </div>
+
+                        <div class="flex-divh" id="flex-change">
+                            <img src="imges/i-phone.png" alt="" id="flex-change">
+                        </div>
+                        <img src="imges/image 3.png" alt="">
+                        <div class="cards-vector-img">
+                            <img src="imges/vector-1.png" alt="">
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="heading-bar" id="h2-999-size">
+                    <h2>User & Firm Administration</h2>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                        the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
+                        of type </p>
+                </div>
+
+            </div>
+
+            <div class="recatngle-png-convert">
+                <div class="recatngle-imges">
+                    <div class="recatngle-img-cc">
+                        <div class="rectangle-cirle">
+                            <img src="imges/circle 2.png" alt="">
+                        </div>
+                        <img src="imges/image 3.png" alt="">
+                        <div class="cards-vector-img">
+                            <img src="imges/vector-1.png" alt="">
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="heading-bar" id="h2-999-size">
+                    <h2>Client management & client <br> Portal</h2>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                        the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
+                        of type </p>
+                </div>
+
+
+            </div>
+
+            <div class="recatngle-png-convert">
+                <div class="recatngle-imges">
+                    <div class="recatngle-img-cc">
+                        <div class="rectangle-cirle">
+                            <img src="imges/circle 2.png" alt="">
+                        </div>
+                        <img src="imges/image 3.png" alt="">
+                        <div class="cards-vector-img">
+                            <img src="imges/vector-1.png" alt="">
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="heading-bar" id="h2-999-size">
+                    <h2>Workflow & Automation</h2>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                        the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
+                        of type </p>
+                </div>
+
+
+            </div>
+
+            <div class="recatngle-png-convert">
+                <div class="recatngle-imges">
+                    <div class="recatngle-img-cc">
+                        <div class="rectangle-cirle">
+                            <img src="imges/circle 2.png" alt="">
+                        </div>
+
+                        <div class="flex-divh" id="flex-change">
+                            <img src="imges/i-phone.png" alt="">
+                        </div>
+                        <img src="imges/image 3.png" alt="">
+                        <div class="cards-vector-img">
+                            <img src="imges/vector-1.png" alt="">
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="heading-bar" id="h2-999-size">
+                    <h2>Document Management</h2>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                        the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
+                        of type </p>
+                </div>
+
+
+            </div>
+
+            <div class="recatngle-png-convert">
+                <div class="recatngle-imges">
+                    <div class="recatngle-img-cc">
+                        <div class="rectangle-cirle">
+                            <img src="imges/circle 2.png" alt="">
+                        </div>
+
+
+
+                        <img src="imges/image 3.png" alt="">
+                        <div class="cards-vector-img">
+                            <img src="imges/vector-1.png" alt="">
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="heading-bar" id="h2-999-size">
+                    <h2>Time & Billing</h2>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                        the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
+                        of type </p>
+                </div>
+
+
+            </div>
+
+            <div class="recatngle-png-convert">
+                <div class="recatngle-imges">
+
+                    <div class="recatngle-img-cc">
+                        <div class="rectangle-cirle">
+                            <img src="imges/circle 2.png" alt="">
+                        </div>
+
+                        <div class="flex-divh" id="flex-change">
+                            <img src="imges/i-phone.png" alt="">
+                        </div>
+
+
+                        <img src="imges/image 3.png" alt="">
+                        <div class="cards-vector-img">
+                            <img src="imges/vector-1.png" alt="">
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="heading-bar" id="h2-999-size">
+                    <h2>Acounta Mobile App</h2>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                        the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
+                        of type </p>
+                </div>
+
+
+            </div>
+
+            <div class="recatngle-png-convert">
+                <div class="recatngle-imges">
+                    <div class="recatngle-img-cc">
+                        <div class="rectangle-cirle">
+                            <img src="imges/circle 2.png" alt="">
+                        </div>
+
+                        <div class="flex-divh" id="flex-change">
+                            <img src="imges/i-phone.png" alt="">
+                        </div>
+                        <img src="imges/image 3.png" alt="">
+                        <div class="cards-vector-img">
+                            <img src="imges/vector-1.png" alt="">
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="heading-bar" id="h2-999-size">
+                    <h2>Guides For Your Clients</h2>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                        the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
+                        of type </p>
+                </div>
+
+
+            </div>
+
+            <div class="recatngle-png-convert">
+                <div class="recatngle-imges">
+                    <div class="recatngle-img-cc">
+                        <div class="rectangle-cirle">
+                            <img src="imges/circle 2.png" alt="">
+                        </div>
+                        <img src="imges/image 3.png" alt="">
+                        <div class="cards-vector-img">
+                            <img src="imges/vector-1.png" alt="">
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="heading-bar" id="h2-999-size">
+                    <h2>Getting Started In Acounta</h2>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                        the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
+                        of type </p>
+                </div>
+
+
+            </div>
+
+            <div class="recatngle-png-convert">
+                <div class="recatngle-imges">
+                    <div class="recatngle-img-cc">
+                        <div class="rectangle-cirle">
+                            <img src="imges/circle 2.png" alt="">
+                        </div>
+
+                        <img src="imges/image 3.png" alt="">
+                        <div class="cards-vector-img">
+                            <img src="imges/vector-1.png" alt="">
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="heading-bar" id="h2-999-size">
+                    <h2>Getting Started In Acounta</h2>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                        the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
+                        of type </p>
+                </div>
+
+
+            </div>
+
+
+
+    </section>
+
+
+    <!-- Promoted Articles -->
+    <section class="products-article">
+        <div class="content">
+            <h1 id="more-ger">Promoted Articles</h1>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
+
+        </div>
+        <div class="wrapprr">
+
+        </div>
+
+    </section>
+
+
+
+
+
+
+    <script src="index.js"></script>
+
+
+</body>
+
+</html>
